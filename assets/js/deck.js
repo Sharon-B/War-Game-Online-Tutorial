@@ -32,6 +32,22 @@ class Card {
         this.suit = suit
         this.value = value 
     }
+
+    get color() {
+        if (this.suit === "♣" || this.suit === "♠") {
+            return "black"
+        } else {
+            return "red"
+        }
+    }
+
+    getHTML() {
+        const cardDiv = document.createElement("div")
+        cardDiv.innerText = this.suit
+        cardDiv.classList.add("card", this.color)
+        cardDiv.dataset.value = `${this.value} ${this.suit}`
+        return cardDiv
+    }
 }
 
 //Create a new deck of cards with all 52 cards, one for each suit and value combination
