@@ -15,6 +15,20 @@ export default class Deck {                 //export deck as a default so it can
     get numberOfCards() {
         return this.cards.length
     }
+
+    // Create a pop function to take a card from the top of the deck/array
+    pop() {
+        return this.cards.shift()       //shift() takes the first element in our array and returns it
+    }
+
+    // Create a function to add a card to the bottom of our deck/array:
+    push(card) {
+        this.cards.push(card)               // push adds an element to the end of the array
+    }
+
+
+
+
     // Add a shuffle function to our deck class, create a loop, loop through our cards and swap them with other cards in our array
     shuffle() {
         for (let i = this.numberOfCards - 1; i > 0; i--) {
